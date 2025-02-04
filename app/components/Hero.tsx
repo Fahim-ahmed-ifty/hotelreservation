@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import BentoCards from './BentoCards';
+import BentoCard from './BentoCards';
 import Button from './Button';
 import CalendarSearchCard from './CalendarSearchCard';
 
@@ -13,7 +13,8 @@ const Hero = () => {
 	};
 
 	return (
-		<div className='w-full h-screen flex flex-row'>
+		<div className='w-full h-screen flex'>
+			{/* Left Section */}
 			<div className='w-1/2 m-12 p-12 flex flex-col justify-center items-start'>
 				<h1 className='text-4xl font-bold'>
 					Your Perfect Stay Awaits!
@@ -31,11 +32,37 @@ const Hero = () => {
 				/>
 			</div>
 
-			<div className='w-1/2 m-12 flex flex-row'>
-				<BentoCards imageSrc='/hero1.jpg' imageAlt='1st one' />
-				<BentoCards imageSrc='/hero2.jpg' imageAlt='2nd one' />
-				<BentoCards imageSrc='/hero3.jpg' imageAlt='3rd one' />
-				<BentoCards imageSrc='/hero4.jpg' imageAlt='4th one' />
+			<div className='w-1/2 m-12 p-4 grid grid-rows-3 grid-cols-2 gap-4 h-full'>
+				<div className='col-span-2 row-span-2'>
+					<BentoCard
+						imageSrc='/hero1.jpg'
+						imageAlt='1st one'
+						customHeight='h-[500px]'
+					/>
+				</div>
+
+				<div className='col-span-1 row-span-1'>
+					<BentoCard
+						imageSrc='/hero2.jpg'
+						imageAlt='2nd one'
+						customHeight='h-[300px]'
+					/>
+				</div>
+				<div className='col-span-1 row-span-1'>
+					<BentoCard
+						imageSrc='/hero3.jpg'
+						imageAlt='3rd one'
+						customHeight='h-[350px]'
+					/>
+				</div>
+
+				<div className='col-span-1 row-span-1'>
+					<BentoCard
+						imageSrc='/hero4.jpg'
+						imageAlt='4th one'
+						customHeight='h-[250px]'
+					/>
+				</div>
 			</div>
 
 			<CalendarSearchCard
