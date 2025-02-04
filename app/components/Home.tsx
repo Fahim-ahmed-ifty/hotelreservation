@@ -21,9 +21,9 @@ const Home = () => {
 			</div>
 			<div className='w-1/2 m-12 flex flex-row'>
 				<BentoCards imageSrc='/hero1.jpg' imageAlt='1st one' />
-				<BentoCards imageSrc='' imageAlt='2nd one' />
-				<BentoCards imageSrc='' imageAlt='3rd one' />
-				<BentoCards imageSrc='' imageAlt='4th one' />
+				<BentoCards imageSrc='/hero2.jpg' imageAlt='2nd one' />
+				<BentoCards imageSrc='/hero3.jpg' imageAlt='3rd one' />
+				<BentoCards imageSrc='/hero4.jpg' imageAlt='4th one' />
 			</div>
 		</div>
 	);
