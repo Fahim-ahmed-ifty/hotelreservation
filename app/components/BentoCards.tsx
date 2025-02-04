@@ -10,19 +10,18 @@ interface BentoCardProps {
 const BentoCards = ({
 	imageSrc,
 	imageAlt,
-	customHeight = 'h-[400px]',
+	customHeight = 'h-full',
 	customWidth = 'w-full'
 }: BentoCardProps) => {
 	return (
 		<div
-			className={`rounded-xl shadow-lg overflow-hidden border border-gray-200 relative transition-transform duration-300 transform hover:scale-110 hover:z-30 hover:shadow-2xl ${customHeight} ${customWidth}`}
+			className={`w-full h-full rounded-xl shadow-lg overflow-hidden border border-gray-200 relative transition-transform duration-300 transform hover:scale-110 hover:z-30 hover:shadow-2xl ${customHeight} ${customWidth}`}
 		>
 			<Image
 				className='object-cover'
 				src={imageSrc}
 				alt={imageAlt}
-				width={400}
-				height={400}
+				layout="fill"
 			/>
 		</div>
 	);
