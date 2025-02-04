@@ -14,18 +14,17 @@ const CalendarSearchCard = ({
 	isOpen,
 	onClose
 }: CalendarSearchCardProps) => {
-	const [startDate, setStartDate] = useState<string[]>([]);
-	const [endDate, setEndDate] = useState<string[]>([]);
+	const [selectedDates, setSelectedDates] = useState<string[]>([]);
+
+	const handleDates = (dates: string[]) => {
+		setSelectedDates(dates);
+	};
 
 	const handleSearch = () => {
-		if (startDate.length > 0 && endDate.length > 0) {
-			alert(
-				`Searching rooms from ${startDate.join(
-					', '
-				)} to ${endDate.join(', ')}`
-			);
+		if (selectedDates.length > 0) {
+			alert(`Searching rooms for dates: ${selectedDates.join(', ')}`);
 		} else {
-			alert('Please select a valid date range.');
+			alert('Please select at least one date.');
 		}
 	};
 
@@ -46,30 +45,11 @@ const CalendarSearchCard = ({
 						Select Dates
 					</span>
 				</div>
-				<CustomCalendar
-					onSelectDates={(start, end) => {
-						if (start) {
-							setStartDate(prevStartDates => [
-								...prevStartDates,
-								start
-							]);
-						}
-						if (end) {
-							setEndDate(prevEndDates => [...prevEndDates, end]);
-						}
-					}}
-				/>
+				<CustomCalendar onSelectDates={handleDates} />
 				<div className='text-center text-gray-600 mt-4'>
-					<p>
-						{startDate.length > 0
-							? `Check-in: ${startDate.join(', ')}`
-							: 'Select Check-in Date'}
-					</p>
-					<p>
-						{endDate.length > 0
-							? `Check-out: ${endDate.join(', ')}`
-							: 'Select Check-out Date'}
-					</p>
+					{selectedDates.length > 0 && (
+						<p>Selected Dates: {selectedDates.join(', ')}</p>
+					)}
 				</div>
 				<div className='text-center mt-4'>
 					<Button onClick={handleSearch} text='Search Rooms' />
