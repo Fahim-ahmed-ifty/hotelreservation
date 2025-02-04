@@ -4,7 +4,7 @@ import Button from './Button';
 const Home = () => {
 	return (
 		<div className='w-full h-screen flex flex-row'>
-			<div className='w-1/2 m-12 p-12'>
+			<div className='w-1/2 m-12 p-12 flex flex-col justify-center items-start'>
 				<h1 className='text-4xl font-bold'>
 					Your Perfect Stay Awaits!
 				</h1>
@@ -13,8 +13,10 @@ const Home = () => {
 					our exclusive hotel. Reserve your room today and make your
 					getaway unforgettable!
 				</h2>
-        <Button text='Clicked For Reservation'
-        />
+				<Button
+					text='Clicked For Reservation'
+					textColor='text-white'
+				/>
 			</div>
 			<div className='w-1/2'>Right</div>
 		</div>
