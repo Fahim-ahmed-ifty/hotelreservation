@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CalendarBody from './CalendarBody';
 import CalendarHeader from './CalendarHeader';
 
@@ -21,6 +21,9 @@ const CustomCalendar = ({ onSelectDates }: CustomCalendarProps) => {
 		setStartDate(null);
 		setEndDate(null);
 	};
+	useEffect(() => {
+		onSelectDates(startDate, endDate);
+	}, [startDate, endDate, onSelectDates]);
 
 	const handleDateSelect = (day: number) => {
 		const date = `${currentYear}-${String(selectedMonth + 1).padStart(
@@ -28,12 +31,16 @@ const CustomCalendar = ({ onSelectDates }: CustomCalendarProps) => {
 			'0'
 		)}-${String(day).padStart(2, '0')}`;
 
-		if (!startDate || (startDate && endDate)) {
+		if (!startDate) {
 			setStartDate(date);
 			setEndDate(null);
 		} else if (startDate && !endDate && date > startDate) {
 			setEndDate(date);
+		} else if (startDate && endDate) {
+			setStartDate(date);
+			setEndDate(null);
 		}
+
 		onSelectDates(startDate, endDate);
 	};
 
