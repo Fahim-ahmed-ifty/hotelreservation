@@ -1,4 +1,5 @@
 import React from 'react';
+import BentoCards from './BentoCards';
 import Button from './Button';
 
 const Home = () => {
@@ -18,7 +19,12 @@ const Home = () => {
 					textColor='text-white'
 				/>
 			</div>
-			<div className='w-1/2'>Right</div>
+			<div className='w-1/2 m-12 flex flex-row'>
+				<BentoCards imageSrc='/hero1.jpg' imageAlt='1st one' />
+				<BentoCards imageSrc='' imageAlt='2nd one' />
+				<BentoCards imageSrc='' imageAlt='3rd one' />
+				<BentoCards imageSrc='' imageAlt='4th one' />
+			</div>
 		</div>
 	);
 };
