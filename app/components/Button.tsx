@@ -21,7 +21,7 @@ const Button = ({
 	textColor = 'white',
 	textSize = '16px',
 	bgColor = 'bg-blue-500',
-	borderRadius = 'md'
+	borderRadius = 'full'
 }: ButtonProps) => {
 	return (
 		<button
