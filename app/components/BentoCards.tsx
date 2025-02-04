@@ -7,7 +7,7 @@ interface BentoCardProps {
 
 const BentoCards = ({ imageSrc, imageAlt }: BentoCardProps) => {
 	return (
-		<div className='w-80 rounded-full shadow-lg overflow-hidden border border-gray-200'>
+		<div className='w-full h-full rounded-full shadow-lg overflow-hidden border border-gray-200 relative transition-transform duration-300 transform hover:scale-110 hover:z-30 hover:shadow-2xl'>
 			<Image
 				className='w-full h-full object-cover'
 				src={imageSrc}
