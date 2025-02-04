@@ -17,14 +17,18 @@ const CalendarSearchCard = ({
 	const [selectedDates, setSelectedDates] = useState<string[]>([]);
 
 	const handleDates = (dates: string[]) => {
+		if (dates.length > 2) {
+			alert('Please select only check-in and check-out dates.');
+			return;
+		}
 		setSelectedDates(dates);
 	};
 
 	const handleSearch = () => {
-		if (selectedDates.length > 0) {
+		if (selectedDates.length === 2) {
 			alert(`Searching rooms for dates: ${selectedDates.join(', ')}`);
 		} else {
-			alert('Please select at least one date.');
+			alert('Please select both check-in and check-out dates.');
 		}
 	};
 
@@ -47,8 +51,16 @@ const CalendarSearchCard = ({
 				</div>
 				<CustomCalendar onSelectDates={handleDates} />
 				<div className='text-center text-gray-600 mt-4'>
-					{selectedDates.length > 0 && (
-						<p>Selected Dates: {selectedDates.join(', ')}</p>
+					{selectedDates.length === 1 && (
+						<p>
+							Check-in time: {selectedDates[0]} 
+						</p>
+					)}
+					{selectedDates.length === 2 && (
+						<p>
+							Check-in time: {selectedDates[0]} <br />
+							Check-out time: {selectedDates[1]}
+						</p>
 					)}
 				</div>
 				<div className='text-center mt-4'>
