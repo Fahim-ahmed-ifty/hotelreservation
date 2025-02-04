@@ -14,7 +14,6 @@ const Hero = () => {
 
 	return (
 		<div className='w-full h-screen flex'>
-			{/* Left Section */}
 			<div className='w-1/2 m-12 p-12 flex flex-col justify-center items-start'>
 				<h1 className='text-4xl font-bold'>
 					Your Perfect Stay Awaits!
@@ -32,35 +31,31 @@ const Hero = () => {
 				/>
 			</div>
 
-			<div className='w-1/2 m-12 p-4 grid grid-rows-3 grid-cols-2 gap-4 h-full'>
-				<div className='col-span-2 row-span-2'>
+			<div className='w-1/2 m-12 p-12 grid grid-cols-2 grid-rows-2 gap-6 h-full'>
+				<div className='col-span-2 row-span-1 relative'>
 					<BentoCard
 						imageSrc='/hero1.jpg'
 						imageAlt='1st one'
 						customHeight='h-[500px]'
+						customWidth='w-full'
 					/>
 				</div>
 
-				<div className='col-span-1 row-span-1'>
+				<div className='col-span-1 row-span-1 relative'>
 					<BentoCard
 						imageSrc='/hero2.jpg'
 						imageAlt='2nd one'
-						customHeight='h-[300px]'
-					/>
-				</div>
-				<div className='col-span-1 row-span-1'>
-					<BentoCard
-						imageSrc='/hero3.jpg'
-						imageAlt='3rd one'
-						customHeight='h-[350px]'
+						customHeight='h-[200px]'
+						customWidth='w-full'
 					/>
 				</div>
 
-				<div className='col-span-1 row-span-1'>
+				<div className='col-span-1 row-span-1 relative'>
 					<BentoCard
-						imageSrc='/hero4.jpg'
-						imageAlt='4th one'
-						customHeight='h-[250px]'
+						imageSrc='/hero3.jpg'
+						imageAlt='3rd one'
+						customHeight='h-[150px]'
+						customWidth='w-full'
 					/>
 				</div>
 			</div>
