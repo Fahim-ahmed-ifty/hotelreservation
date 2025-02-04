@@ -1,9 +1,10 @@
+// CustomCalendar.tsx
 import { useEffect, useState } from 'react';
 import CalendarBody from './CalendarBody';
 import CalendarHeader from './CalendarHeader';
 
 interface CustomCalendarProps {
-	onSelectDates: (start: string | null, end: string | null) => void;
+	onSelectDates: (dates: string[]) => void;
 }
 
 const CustomCalendar = ({ onSelectDates }: CustomCalendarProps) => {
@@ -13,17 +14,12 @@ const CustomCalendar = ({ onSelectDates }: CustomCalendarProps) => {
 
 	const [selectedMonth, setSelectedMonth] =
 		useState(currentMonthIndex);
-	const [startDate, setStartDate] = useState<string | null>(null);
-	const [endDate, setEndDate] = useState<string | null>(null);
+	const [selectedDates, setSelectedDates] = useState<string[]>([]);
 
 	const handleMonthClick = (index: number) => {
 		setSelectedMonth(index);
-		setStartDate(null);
-		setEndDate(null);
+		setSelectedDates([]);
 	};
-	useEffect(() => {
-		onSelectDates(startDate, endDate);
-	}, [startDate, endDate, onSelectDates]);
 
 	const handleDateSelect = (day: number) => {
 		const date = `${currentYear}-${String(selectedMonth + 1).padStart(
@@ -31,18 +27,17 @@ const CustomCalendar = ({ onSelectDates }: CustomCalendarProps) => {
 			'0'
 		)}-${String(day).padStart(2, '0')}`;
 
-		if (!startDate) {
-			setStartDate(date);
-			setEndDate(null);
-		} else if (startDate && !endDate && date > startDate) {
-			setEndDate(date);
-		} else if (startDate && endDate) {
-			setStartDate(date);
-			setEndDate(null);
-		}
-
-		onSelectDates(startDate, endDate);
+		setSelectedDates(prev => {
+			if (prev.includes(date)) {
+				return prev.filter(d => d !== date);
+			}
+			return [...prev, date];
+		});
 	};
+
+	useEffect(() => {
+		onSelectDates(selectedDates);
+	}, [selectedDates, onSelectDates]);
 
 	return (
 		<div className='p-4 bg-white rounded-lg shadow-md border'>
@@ -53,8 +48,7 @@ const CustomCalendar = ({ onSelectDates }: CustomCalendarProps) => {
 			<CalendarBody
 				selectedMonth={selectedMonth}
 				currentYear={currentYear}
-				startDate={startDate}
-				endDate={endDate}
+				selectedDates={selectedDates}
 				onDateSelect={handleDateSelect}
 			/>
 		</div>

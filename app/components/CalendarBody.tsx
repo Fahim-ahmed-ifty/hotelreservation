@@ -1,8 +1,7 @@
 interface CalendarBodyProps {
 	selectedMonth: number;
 	currentYear: number;
-	startDate: string | null;
-	endDate: string | null;
+	selectedDates: string[];
 	onDateSelect: (day: number) => void;
 }
 
@@ -13,8 +12,7 @@ const getDaysInMonth = (month: number, year: number) => {
 const CalendarBody = ({
 	selectedMonth,
 	currentYear,
-	startDate,
-	endDate,
+	selectedDates,
 	onDateSelect
 }: CalendarBodyProps) => {
 	const daysInMonth = getDaysInMonth(selectedMonth, currentYear);
@@ -26,9 +24,7 @@ const CalendarBody = ({
 				const date = `${currentYear}-${String(
 					selectedMonth + 1
 				).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-				const isSelected = startDate === date || endDate === date;
-				const isInRange =
-					startDate && endDate && date > startDate && date < endDate;
+				const isSelected = selectedDates.includes(date);
 
 				return (
 					<div
@@ -37,8 +33,6 @@ const CalendarBody = ({
 						className={`cursor-pointer flex justify-center items-center transition-all ${
 							isSelected
 								? 'bg-blue-500 text-white'
-								: isInRange
-								? 'bg-blue-100'
 								: 'bg-gray-200 text-gray-600 hover:bg-blue-100'
 						}`}
 					>
