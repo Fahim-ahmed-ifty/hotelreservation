@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { FaCalendarAlt } from 'react-icons/fa';
+import Button from './Button';
 import CustomCalendar from './CustomCalendar';
 
 interface CalendarSearchCardProps {
@@ -28,7 +29,7 @@ const CalendarSearchCard = ({
 
 	return (
 		<div className='fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50'>
-			<div className='w-80 p-6 bg-white rounded-xl shadow-lg relative'>
+			<div className='w-full sm:w-80 p-6 bg-white rounded-xl shadow-lg relative'>
 				<button
 					onClick={onClose}
 					className='absolute top-2 right-2 text-red-500'
@@ -59,12 +60,9 @@ const CalendarSearchCard = ({
 							: 'Select Check-out Date'}
 					</p>
 				</div>
-				<button
-					onClick={handleSearch}
-					className='w-full py-2 bg-blue-500 text-white rounded-lg mt-4'
-				>
-					Search Rooms
-				</button>
+				<div className='text-center mt-4'>
+					<Button onClick={handleSearch} text='Search Rooms' />
+				</div>
 			</div>
 		</div>
 	);
