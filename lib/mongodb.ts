@@ -1,24 +1,9 @@
-import mongoose from 'mongoose';
+import { MongoClient } from 'mongodb';
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const uri = process.env.MONGODB_URI as string;
+const client = new MongoClient(uri);
 
-if (!MONGODB_URI) {
-	throw new Error('❌ Please define the MONGODB_URI in .env.local');
-}
-
-const cached = global.mongoose || { conn: null, promise: null };
-
-export async function connectToDatabase(): Promise<mongoose.Connection> {
-	if (cached.conn) return cached.conn;
-
-	if (!cached.promise) {
-		cached.promise = mongoose
-			.connect(MONGODB_URI as string)
-			.then(mongooseInstance => mongooseInstance.connection);
-	}
-
-	console.log('connected');
-
-	cached.conn = await cached.promise;
-	return cached.conn;
-}
+export const connectToDatabase = async () => {
+	await client.connect();
+	return client.db();
+};

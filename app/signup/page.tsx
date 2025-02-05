@@ -1,5 +1,6 @@
+// app/signup/page.tsx
 'use client';
-import axios from 'axios';
+
 import React, { useState } from 'react';
 
 interface SignupForm {
@@ -8,7 +9,7 @@ interface SignupForm {
 	password: string;
 }
 
-const Signup: React.FC = () => {
+export default function SignUpPage() {
 	const [form, setForm] = useState<SignupForm>({
 		name: '',
 		email: '',
@@ -19,18 +20,24 @@ const Signup: React.FC = () => {
 		setForm({ ...form, [e.target.name]: e.target.value });
 	};
 
-	const handleSignup = () => {
+	const handleSignup = async (e: React.FormEvent) => {
+		e.preventDefault();
+
+		// If form is invalid (e.g., fields are empty), don't continue
 		if (!form.name || !form.email || !form.password) return;
 
-		console.log('debug: Signup form =>', form);
+		// Now we'll send the form data to the server to handle signup
+		const response = await fetch('/signup', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(form)
+		});
 
-		axios
-			.post('/api/auth/signup', form)
-			.then(response => {
-				alert(response.data.message);
-				setForm({ name: '', email: '', password: '' });
-			})
-			.catch(err => console.error('Error signing up:', err));
+		const result = await response.json();
+		alert(result.message); // Show the message from the server
+
+		// Reset form after successful submission
+		setForm({ name: '', email: '', password: '' });
 	};
 
 	return (
@@ -69,6 +76,4 @@ const Signup: React.FC = () => {
 			</div>
 		</div>
 	);
-};
-
-export default Signup;
+}
