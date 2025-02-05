@@ -3,8 +3,8 @@ import Footer from './Footer';
 import Hero from './Hero';
 import Navbar from './Navbar';
 import RoomDetails from './RoomDetails';
-import Login from './auth/login';
-import Signup from './auth/signup';
+import Login from './login';
+import Signup from './signup';
 
 const Home = () => {
 	return (
