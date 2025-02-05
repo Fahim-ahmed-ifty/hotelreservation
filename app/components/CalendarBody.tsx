@@ -5,41 +5,47 @@ interface CalendarBodyProps {
 	onDateSelect: (day: number) => void;
 }
 
-const getDaysInMonth = (month: number, year: number) => {
-	return new Date(year, month + 1, 0).getDate();
-};
-
 const CalendarBody = ({
 	selectedMonth,
 	currentYear,
 	selectedDates,
 	onDateSelect
 }: CalendarBodyProps) => {
-	const daysInMonth = getDaysInMonth(selectedMonth, currentYear);
+	const daysInMonth = new Date(
+		currentYear,
+		selectedMonth + 1,
+		0
+	).getDate();
+	const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
+
+	const isHighlighted = (day: number) => {
+		const dateStr = `${currentYear}-${String(
+			selectedMonth + 1
+		).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+		if (selectedDates.length === 2) {
+			const [start, end] = selectedDates;
+
+			return dateStr >= start && dateStr <= end;
+		}
+
+		return selectedDates.includes(dateStr);
+	};
 
 	return (
 		<div className='grid grid-cols-7 gap-2'>
-			{Array.from({ length: daysInMonth }, (_, i) => {
-				const day = i + 1;
-				const date = `${currentYear}-${String(
-					selectedMonth + 1
-				).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-				const isSelected = selectedDates.includes(date);
-
-				return (
-					<div
-						key={date}
-						onClick={() => onDateSelect(day)}
-						className={`cursor-pointer flex justify-center items-center transition-all ${
-							isSelected
-								? 'bg-blue-500 text-white'
-								: 'bg-gray-200 text-gray-600 hover:bg-blue-100'
-						}`}
-					>
-						{day}
-					</div>
-				);
-			})}
+			{days.map(day => (
+				<button
+					key={day}
+					onClick={() => onDateSelect(day)}
+					className={`p-2 border rounded ${
+						isHighlighted(day)
+							? 'bg-blue-200 line-through'
+							: 'bg-white'
+					}`}
+				>
+					{day}
+				</button>
+			))}
 		</div>
 	);
 };

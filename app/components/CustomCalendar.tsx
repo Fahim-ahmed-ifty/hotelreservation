@@ -1,24 +1,25 @@
-// CustomCalendar.tsx
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import CalendarBody from './CalendarBody';
 import CalendarHeader from './CalendarHeader';
 
 interface CustomCalendarProps {
-	onSelectDates: (dates: string[]) => void;
+	selectedDates: string[];
+	onDateSelect: (date: string) => void;
 }
 
-const CustomCalendar = ({ onSelectDates }: CustomCalendarProps) => {
+const CustomCalendar = ({
+	selectedDates,
+	onDateSelect
+}: CustomCalendarProps) => {
 	const today = new Date();
 	const currentMonthIndex = today.getMonth();
 	const currentYear = today.getFullYear();
 
 	const [selectedMonth, setSelectedMonth] =
 		useState(currentMonthIndex);
-	const [selectedDates, setSelectedDates] = useState<string[]>([]);
 
 	const handleMonthClick = (index: number) => {
 		setSelectedMonth(index);
-		setSelectedDates([]);
 	};
 
 	const handleDateSelect = (day: number) => {
@@ -26,18 +27,8 @@ const CustomCalendar = ({ onSelectDates }: CustomCalendarProps) => {
 			2,
 			'0'
 		)}-${String(day).padStart(2, '0')}`;
-
-		setSelectedDates(prev => {
-			if (prev.includes(date)) {
-				return prev.filter(d => d !== date);
-			}
-			return [...prev, date];
-		});
+		onDateSelect(date);
 	};
-
-	useEffect(() => {
-		onSelectDates(selectedDates);
-	}, [selectedDates, onSelectDates]);
 
 	return (
 		<div className='p-4 bg-white rounded-lg shadow-md border'>
