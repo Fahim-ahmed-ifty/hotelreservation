@@ -7,7 +7,7 @@ import Button from './Button';
 const Navbar = () => {
 	const router = useRouter();
 	const handleSignupRedirect = () => {
-		router.push('/signup');
+		router.push('/login');
 	};
 
 	return (
