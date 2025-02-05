@@ -1,11 +1,9 @@
-import Home from './components/Home';
+import Login from './components/login';
 
-const page = () => {
-	return (
-		<div>
-			<Home />
-		</div>
-	);
-};
+const page = () => (
+	<div>
+		<Login />
+	</div>
+);
 
 export default page;
