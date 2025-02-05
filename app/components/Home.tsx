@@ -6,7 +6,7 @@ import RoomDetails from './RoomDetails';
 
 const Home = () => {
 	return (
-		<div className='w-full h-screen'>
+		<div className='w-screen h-screen overflow-y-auto scrollbar'>
 			<Navbar />
 			<Hero />
 			<RoomDetails />
