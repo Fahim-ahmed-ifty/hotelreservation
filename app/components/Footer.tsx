@@ -10,18 +10,19 @@ const Footer = () => {
 	return (
 		<div className='w-full bg-gradient-to-r from-blue-500 via-blue-400 to-blue-300 text-black py-8 shadow-[0_-6px_8px_rgba(1,1,1,0.25)]'>
 			<div className='max-w-screen-xl mx-auto px-6'>
-
 				<div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-
 					<div>
 						<h3 className='text-xl font-semibold'>
 							Zetta Reservation
 						</h3>
-						<p className='mt-2'>
+						<p className='mt-1'>
 							Your one-stop hotel booking solution.
 						</p>
-						<p className='mt-1'>123 Hotel St., City, Country</p>
-						<p className='mt-1'>Phone: (123) 456-7890</p>
+						<p className='mt-2'>
+							House 18, Road 02, Green City Housing, Mohammadpur,
+							Dhaka-1207
+						</p>
+						<p className='mt-1'>Phone: +8801621843514</p>
 					</div>
 
 					<div>
