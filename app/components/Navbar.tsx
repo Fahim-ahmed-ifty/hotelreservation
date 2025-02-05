@@ -11,12 +11,12 @@ const Navbar = () => {
 	};
 
 	return (
-		<div className='w-full border-b-2 shadow-lg sticky top-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 z-50'>
+		<div className='w-full border-b-2 shadow-lg sticky top-0 bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400 text-black z-50'>
 			<div className='mx-auto flex justify-between items-center py-4 px-6'>
-				<div className='w-1/4  text-white text-xl font-bold'>
+				<div className='w-1/4   text-xl font-bold'>
 					Zetta Reservation
 				</div>
-				<div className='w-1/4 flex space-x-6 text-white font-semibold'>
+				<div className='w-1/4 flex space-x-6  font-semibold'>
 					<p className='hover:text-yellow-300 cursor-pointer transition duration-300 py-2'>
 						Home
 					</p>
