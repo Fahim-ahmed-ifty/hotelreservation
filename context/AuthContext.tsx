@@ -24,14 +24,12 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
 	const [isAuthenticated, setIsAuthenticated] =
 		useState<boolean>(false);
 
-
 	useEffect(() => {
 		const token = localStorage.getItem('authToken');
 		if (token) {
 			setIsAuthenticated(true);
 		}
 	}, []);
-
 
 	const login = (token: string) => {
 		localStorage.setItem('authToken', token);
@@ -50,7 +48,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
 	);
 };
 
-// Custom hook to use authentication
 export const useAuth = () => {
 	const context = useContext(AuthContext);
 	if (!context) {
