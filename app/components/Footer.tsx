@@ -8,7 +8,7 @@ import {
 
 const Footer = () => {
 	return (
-		<div className='w-full bg-gradient-to-r from-blue-500 via-blue-400 to-blue-300 text-black py-8 shadow-[0_-6px_8px_rgba(1,1,1,0.25)]'>
+		<div className='w-full bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400 text-gray-800 py-8 shadow-md'>
 			<div className='max-w-screen-xl mx-auto px-6'>
 				<div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
 					<div>
@@ -31,7 +31,7 @@ const Footer = () => {
 							<li>
 								<a
 									href='/about'
-									className='hover:text-gray-200 transition-all'
+									className='hover:text-gray-500 transition-all'
 								>
 									About Us
 								</a>
@@ -39,7 +39,7 @@ const Footer = () => {
 							<li>
 								<a
 									href='/contact'
-									className='hover:text-gray-200 transition-all'
+									className='hover:text-gray-500 transition-all'
 								>
 									Contact
 								</a>
@@ -47,7 +47,7 @@ const Footer = () => {
 							<li>
 								<a
 									href='/terms'
-									className='hover:text-gray-200 transition-all'
+									className='hover:text-gray-500 transition-all'
 								>
 									Terms & Conditions
 								</a>
@@ -55,7 +55,7 @@ const Footer = () => {
 							<li>
 								<a
 									href='/privacy'
-									className='hover:text-gray-200 transition-all'
+									className='hover:text-gray-500 transition-all'
 								>
 									Privacy Policy
 								</a>
@@ -68,25 +68,25 @@ const Footer = () => {
 						<div className='flex space-x-4 mt-2'>
 							<a
 								href='https://facebook.com'
-								className='text-2xl hover:text-gray-200 transition-all'
+								className='text-2xl hover:text-gray-500 transition-all'
 							>
 								<FaFacebook />
 							</a>
 							<a
 								href='https://twitter.com'
-								className='text-2xl hover:text-gray-200 transition-all'
+								className='text-2xl hover:text-gray-500 transition-all'
 							>
 								<FaTwitter />
 							</a>
 							<a
 								href='https://instagram.com'
-								className='text-2xl hover:text-gray-200 transition-all'
+								className='text-2xl hover:text-gray-500 transition-all'
 							>
 								<FaInstagram />
 							</a>
 							<a
 								href='https://linkedin.com'
-								className='text-2xl hover:text-gray-200 transition-all'
+								className='text-2xl hover:text-gray-500 transition-all'
 							>
 								<FaLinkedin />
 							</a>
@@ -102,9 +102,9 @@ const Footer = () => {
 						<input
 							type='email'
 							placeholder='Enter your email'
-							className='p-2 rounded-md w-60 text-black'
+							className='p-2 rounded-md w-60 text-gray-800'
 						/>
-						<button className='bg-blue-600 p-2 rounded-md text-white hover:bg-blue-500 transition-all'>
+						<button className='bg-gray-700 p-2 rounded-md text-white hover:bg-gray-600 transition-all'>
 							Subscribe
 						</button>
 					</div>
