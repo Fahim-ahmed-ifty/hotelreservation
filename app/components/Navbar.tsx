@@ -18,7 +18,12 @@ const Navbar = () => {
 					<p className='py-2'>Home</p>
 					<p className='py-2'>Rooms</p>
 					<p className='py-2'>Contact US</p>
-					<Button text='Log Out' onClick={handleSignupRedirect} />
+					<Button
+						className='ml-6 hover:bg-red-700 hover:text-white'
+						text='Log Out'
+						bgColor='bg-red-400'
+						onClick={handleSignupRedirect}
+					/>
 				</div>
 			</div>
 		</div>
