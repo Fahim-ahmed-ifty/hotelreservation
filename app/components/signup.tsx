@@ -1,7 +1,6 @@
-// components/Signup.tsx
 'use client';
 
-import { ServerResponse, signup } from '@/actions/auth'; // Import the server action
+import { ServerResponse, signup } from '@/actions/auth';
 import React, { useState } from 'react';
 
 interface SignupForm {
@@ -25,7 +24,6 @@ const Signup: React.FC = () => {
 	const handleSignup = async (e: React.FormEvent) => {
 		e.preventDefault();
 
-		// Calling the signup action
 		const response: ServerResponse = await signup(
 			form.name,
 			form.email,
@@ -33,12 +31,10 @@ const Signup: React.FC = () => {
 		);
 
 		if (response.error) {
-			// If there's an error, set the message as the error
 			setMessage(response.error);
 		} else {
-			// If successful, set the message as the success message
 			setMessage(response.success || 'Signup successful!');
-			setForm({ name: '', email: '', password: '' }); // Clear form on success
+			setForm({ name: '', email: '', password: '' });
 		}
 	};
 
