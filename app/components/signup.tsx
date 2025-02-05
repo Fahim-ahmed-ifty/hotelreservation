@@ -1,7 +1,9 @@
 'use client';
 
 import { ServerResponse, signup } from '@/actions/auth';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
+import Button from './Button';
 
 interface SignupForm {
 	name: string;
@@ -38,8 +40,13 @@ const Signup: React.FC = () => {
 		}
 	};
 
+	const router = useRouter();
+	const handlelogin = () => {
+		router.push('/login');
+	};
+
 	return (
-		<div className='min-h-screen mx-auto p-4'>
+		<div className='min-h-screen flex flex-col items-center justify-center'>
 			<h1 className='text-2xl font-bold mb-4'>Sign Up</h1>
 			{message && <p className='text-red-500'>{message}</p>}
 			<form className='flex flex-col mb-4' onSubmit={handleSignup}>
@@ -73,6 +80,11 @@ const Signup: React.FC = () => {
 					Sign Up
 				</button>
 			</form>
+			<Button
+				text='Log in'
+				textColor='text-white'
+				onClick={handlelogin}
+			/>
 		</div>
 	);
 };
