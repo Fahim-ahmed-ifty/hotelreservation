@@ -23,7 +23,12 @@ const RoomCard = ({ text, img, imgalt, details }: roomcardprops) => {
 			<div className='mt-2 font-semibold'>{text}</div>
 			<div className='flex-grow'>{details}</div>
 			<div className='mt-2 flex justify-center items-center'>
-				<Button text='Book Now' bgColor='bg-orange-400' />
+				<Button
+					className='hover:text-white'
+					text='Book Now'
+					bgColor='bg-orange-400'
+					textColor='text-black'
+				/>
 			</div>
 		</div>
 	);
