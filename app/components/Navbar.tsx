@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Navbar = () => {
 	return (
 		<div className='w-full border border-b-2 shadow-xl sticky top-0 bg-background z-50'>
@@ -9,6 +10,7 @@ const Navbar = () => {
 					<p>Home</p>
 					<p>Rooms</p>
 					<p>Contact US</p>
+
 				</div>
 			</div>
 		</div>
