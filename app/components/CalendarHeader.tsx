@@ -23,7 +23,7 @@ const CalendarHeader = ({
 	onMonthClick
 }: CalendarHeaderProps) => {
 	return (
-		<div className='flex justify-between items-center mb-4'>
+		<div className='flex justify-between items-center mb-4 text-white'>
 			<button onClick={() => onMonthClick((selectedMonth + 11) % 12)}>
 				&lt;
 			</button>
