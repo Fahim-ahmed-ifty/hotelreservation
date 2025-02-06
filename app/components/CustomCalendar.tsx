@@ -31,7 +31,7 @@ const CustomCalendar = ({
 	};
 
 	return (
-		<div className='p-2 bg-gray-800 rounded-lg shadow-md border'>
+		<div className='p-2 bg-gray-800 bg-opacity-20 rounded-lg shadow-md border'>
 			<CalendarHeader
 				selectedMonth={selectedMonth}
 				onMonthClick={handleMonthClick}

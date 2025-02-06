@@ -19,7 +19,7 @@ const page = () => {
 				<h2 className='text-xl font-bold mb-4'>
 					Our Location in Dhaka
 				</h2>
-				<Map pinned={[23.8103, 90.4125]} />
+				<Map pinned={[23.7829, 90.3920]} />
 			</div>
 			<Footer />
 		</div>
