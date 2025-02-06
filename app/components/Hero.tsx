@@ -29,7 +29,7 @@ const Hero = () => {
 						textColor='text-white'
 						onClick={handleModalToggle}
 					/>
-					<p className='ml-4 mt-3 text-[12px]'>
+					<p className='ml-2 mt-3 text-[12px] hover:underline'>
 						Get 25% off for first booked
 					</p>
 				</div>
