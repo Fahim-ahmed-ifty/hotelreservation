@@ -23,12 +23,16 @@ const Hero = () => {
 					our exclusive hotel. Reserve your room today and make your
 					getaway unforgettable!
 				</h2>
-
-				<Button
-					text='Clicked For Reservation'
-					textColor='text-white'
-					onClick={handleModalToggle}
-				/>
+				<div className='flex flex-row'>
+					<Button
+						text='Clicked For Reservation'
+						textColor='text-white'
+						onClick={handleModalToggle}
+					/>
+					<p className='ml-4 mt-3 text-[12px]'>
+						Get 25% off for first booked
+					</p>
+				</div>
 			</div>
 
 			<div className='w-1/2 m-12 p-12 grid grid-cols-2 grid-rows-2 gap-6 h-full'>
