@@ -1,6 +1,7 @@
 import React from 'react';
 import AboutUs from '../components/AboutUs';
 import CustomerSay from '../components/CustomerSay';
+import FeaturedServices from '../components/FeaturedServices';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
 import Map from '../components/Map';
@@ -13,13 +14,14 @@ const page = () => {
 			<Navbar />
 			<Hero />
 			<AboutUs />
+			<FeaturedServices />
 			<RoomDetails />
 			<CustomerSay />
 			<div className='m-12 p-12'>
 				<h2 className='text-xl font-bold mb-4'>
 					Our Location in Dhaka
 				</h2>
-				<Map pinned={[23.7829, 90.3920]} />
+				<Map pinned={[23.7829, 90.392]} />
 			</div>
 			<Footer />
 		</div>
