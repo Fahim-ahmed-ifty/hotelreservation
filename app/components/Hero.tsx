@@ -32,7 +32,7 @@ const Hero = () => {
 			</div>
 
 			<div className='w-1/2 m-12 p-12 grid grid-cols-2 grid-rows-2 gap-6 h-full'>
-				<div className='col-span-2 row-span-1 relative'>
+				<div className='col-span-2 row-span-1 relative shadow-xl'>
 					<BentoCard
 						imageSrc='/hero1.jpg'
 						imageAlt='1st one'
