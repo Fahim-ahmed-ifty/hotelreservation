@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import RoomCard from '../components/RoomCard';
 
@@ -69,6 +70,7 @@ const page = () => {
 					/>
 				</div>
 			</div>
+			<Footer />
 		</div>
 	);
 };
