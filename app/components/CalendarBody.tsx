@@ -32,7 +32,7 @@ const CalendarBody = ({
 	};
 
 	return (
-		<div className='grid grid-cols-7 gap-2'>
+		<div className='grid grid-cols-6 gap-1'>
 			{days.map(day => (
 				<button
 					key={day}
