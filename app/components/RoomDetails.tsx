@@ -1,8 +1,15 @@
+'use client'
+
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import Button from './Button';
 import RoomCard from './RoomCard';
-
 const RoomDetails = () => {
+	const router = useRouter();
+	const handleroom = () => {
+		router.push('/rooms')
+	};
+
 	return (
 		<div className='h-auto m-12 p-12 flex flex-col bg-blue-600 bg-opacity-20 rounded-3xl'>
 			<div className='text-2xl font-bold flex justify-center items-center'>
@@ -34,9 +41,13 @@ const RoomDetails = () => {
 					details='Celebrate your special occasion in our Honeymoon Suite. It includes a king-sized bed, a romantic ambiance, and a private balcony with a breathtaking view.'
 				/>
 				<div className=''>
-					<Button text='See all our rooms' className='hover:text-white'
-					bgColor='bg-orange-400'
-					textColor='text-black' />
+					<Button
+						text='See all our rooms'
+						className='hover:text-white'
+						bgColor='bg-orange-400'
+						textColor='text-black'
+						onClick={handleroom}
+					/>
 				</div>
 			</div>
 		</div>
