@@ -10,6 +10,18 @@ const Navbar = () => {
 		router.push('/login');
 	};
 
+	const handleHome = () => {
+		router.push('/home');
+	};
+
+	const handleRoom = () => {
+		router.push('/rooms');
+	};
+
+	const handleContact = () => {
+		router.push('/contact');
+	};
+
 	return (
 		<div className='w-full border-b-2 shadow-lg sticky top-0 bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400 text-black z-50'>
 			<div className='mx-auto flex justify-between items-center py-4 px-6'>
@@ -17,13 +29,22 @@ const Navbar = () => {
 					Zetta Reservation
 				</div>
 				<div className='w-1/4 flex space-x-6  font-semibold'>
-					<p className='hover:text-yellow-300 cursor-pointer transition duration-300 py-2'>
+					<p
+						className='hover:text-yellow-300 cursor-pointer transition duration-300 py-2'
+						onClick={handleHome}
+					>
 						Home
 					</p>
-					<p className='hover:text-yellow-300 cursor-pointer transition duration-300 py-2'>
+					<p
+						className='hover:text-yellow-300 cursor-pointer transition duration-300 py-2'
+						onClick={handleRoom}
+					>
 						Rooms
 					</p>
-					<p className='hover:text-yellow-300 cursor-pointer transition duration-300 py-2'>
+					<p
+						className='hover:text-yellow-300 cursor-pointer transition duration-300 py-2'
+						onClick={handleContact}
+					>
 						Contact Us
 					</p>
 					<Button

@@ -3,9 +3,8 @@ import Navbar from '../components/Navbar';
 
 const page = () => {
 	return (
-		<div className=''>
+		<div>
 			<Navbar />
-			<div>Rooms Show Here</div>
 		</div>
 	);
 };
