@@ -23,9 +23,9 @@ const Navbar = () => {
 	};
 
 	return (
-		<div className='w-full border-b-2 shadow-lg sticky top-0 bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400 text-black z-50'>
+		<div className='w-full border-b-2 shadow-lg sticky top-0 bg-gradient-to-r from-blue-300 via-blue-400 to-blue-600 text-white z-50'>
 			<div className='mx-auto flex justify-between items-center py-4 px-6'>
-				<div className='w-1/4   text-xl font-bold'>
+				<div className='w-1/4   text-xl font-bold text-black'>
 					Zetta Reservation
 				</div>
 				<div className='w-1/4 flex space-x-6  font-semibold'>
