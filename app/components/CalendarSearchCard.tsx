@@ -47,16 +47,16 @@ const CalendarSearchCard = ({
 
 	return (
 		<div className='fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50'>
-			<div className='w-full sm:w-80 p-6 bg-gray-400 bg-opacity-80 rounded-xl shadow-lg relative'>
+			<div className='w-full sm:w-80 p-6 bg-white bg-opacity-80 rounded-xl shadow-lg relative'>
 				<button
 					onClick={onClose}
-					className='absolute top-2 right-2 text-red-600 font-semibold'
+					className='absolute top-2 right-2 text-gray-600 font-semibold'
 				>
 					X
 				</button>
 				<div className='flex items-center mb-4'>
 					<FaCalendarAlt className='w-6 h-6 text-gray-600' />
-					<span className='ml-2 text-lg font-semibold'>
+					<span className='ml-2 text-lg font-semibold text-gray-800'>
 						Select Dates
 					</span>
 				</div>
@@ -71,14 +71,18 @@ const CalendarSearchCard = ({
 						</p>
 					)}
 					{selectedDates.length === 2 && (
-						<p className='text-lg font-semibold text-black'>
+						<p className='text-lg font-semibold text-gray-800'>
 							Check-in: {selectedDates[0]} <br />
 							Check-out: {selectedDates[1]}
 						</p>
 					)}
 				</div>
 				<div className='text-center mt-4'>
-					<Button onClick={handleSearch} text='Search Rooms' className='hover:text-white' />
+					<Button
+						onClick={handleSearch}
+						text='Search Rooms'
+						className='bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded transition duration-300'
+					/>
 				</div>
 			</div>
 		</div>
