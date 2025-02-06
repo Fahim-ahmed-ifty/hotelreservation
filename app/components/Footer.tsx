@@ -31,7 +31,7 @@ const Footer = () => {
 							<li>
 								<a
 									href='/about'
-									className='hover:text-gray-500 transition-all'
+									className='hover:text-yellow-300 transition-all'
 								>
 									About Us
 								</a>
@@ -39,7 +39,7 @@ const Footer = () => {
 							<li>
 								<a
 									href='/contact'
-									className='hover:text-gray-500 transition-all'
+									className='hover:text-yellow-300 transition-all'
 								>
 									Contact
 								</a>
@@ -47,7 +47,7 @@ const Footer = () => {
 							<li>
 								<a
 									href='/terms'
-									className='hover:text-gray-500 transition-all'
+									className='hover:text-yellow-300 transition-all'
 								>
 									Terms & Conditions
 								</a>
@@ -55,7 +55,7 @@ const Footer = () => {
 							<li>
 								<a
 									href='/privacy'
-									className='hover:text-gray-500 transition-all'
+									className='hover:text-yellow-300 transition-all'
 								>
 									Privacy Policy
 								</a>
@@ -68,25 +68,25 @@ const Footer = () => {
 						<div className='flex space-x-4 mt-2'>
 							<a
 								href='https://facebook.com'
-								className='text-2xl hover:text-gray-500 transition-all'
+								className='text-2xl hover:text-yellow-300 transition-all'
 							>
 								<FaFacebook />
 							</a>
 							<a
 								href='https://twitter.com'
-								className='text-2xl hover:text-gray-500 transition-all'
+								className='text-2xl hover:text-yellow-300 transition-all'
 							>
 								<FaTwitter />
 							</a>
 							<a
 								href='https://instagram.com'
-								className='text-2xl hover:text-gray-500 transition-all'
+								className='text-2xl hover:text-yellow-300 transition-all'
 							>
 								<FaInstagram />
 							</a>
 							<a
 								href='https://linkedin.com'
-								className='text-2xl hover:text-gray-500 transition-all'
+								className='text-2xl hover:text-yellow-300 transition-all'
 							>
 								<FaLinkedin />
 							</a>
@@ -104,7 +104,7 @@ const Footer = () => {
 							placeholder='Enter your email'
 							className='p-2 rounded-md w-60 text-gray-800'
 						/>
-						<button className='bg-gray-700 p-2 rounded-md text-white hover:bg-gray-600 transition-all'>
+						<button className='bg-gray-700 p-2 rounded-md text-white hover:text-red-400 transition-all'>
 							Subscribe
 						</button>
 					</div>
