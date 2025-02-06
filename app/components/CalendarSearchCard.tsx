@@ -47,10 +47,10 @@ const CalendarSearchCard = ({
 
 	return (
 		<div className='fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50'>
-			<div className='w-full sm:w-80 p-6 bg-white rounded-xl shadow-lg relative'>
+			<div className='w-full sm:w-80 p-6 bg-gray-400 bg-opacity-80 rounded-xl shadow-lg relative'>
 				<button
 					onClick={onClose}
-					className='absolute top-2 right-2 text-red-500'
+					className='absolute top-2 right-2 text-red-600 font-semibold'
 				>
 					X
 				</button>
@@ -71,14 +71,14 @@ const CalendarSearchCard = ({
 						</p>
 					)}
 					{selectedDates.length === 2 && (
-						<p>
+						<p className='text-lg font-semibold text-black'>
 							Check-in: {selectedDates[0]} <br />
 							Check-out: {selectedDates[1]}
 						</p>
 					)}
 				</div>
 				<div className='text-center mt-4'>
-					<Button onClick={handleSearch} text='Search Rooms' />
+					<Button onClick={handleSearch} text='Search Rooms' className='hover:text-white' />
 				</div>
 			</div>
 		</div>

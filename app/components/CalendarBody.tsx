@@ -39,8 +39,8 @@ const CalendarBody = ({
 					onClick={() => onDateSelect(day)}
 					className={`p-2 border rounded ${
 						isHighlighted(day)
-							? 'bg-blue-200 line-through'
-							: 'bg-white'
+							? 'bg-blue-400 line-through'
+							: 'bg-gray-400'
 					}`}
 				>
 					{day}

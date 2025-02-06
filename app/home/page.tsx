@@ -1,5 +1,6 @@
 import React from 'react';
 import AboutUs from '../components/AboutUs';
+import CustomerSay from '../components/CustomerSay';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
 import Navbar from '../components/Navbar';
@@ -12,6 +13,7 @@ const page = () => {
 			<Hero />
 			<AboutUs />
 			<RoomDetails />
+			<CustomerSay />
 			<Footer />
 		</div>
 	);
