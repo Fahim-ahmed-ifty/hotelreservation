@@ -50,7 +50,7 @@ const CalendarSearchCard = ({
 			<div className='w-full sm:w-80 p-6 bg-white bg-opacity-80 rounded-xl shadow-lg relative'>
 				<button
 					onClick={onClose}
-					className='absolute top-2 right-2 text-gray-600 font-semibold'
+					className='absolute top-2 right-2 text-gray-600 hover:text-red-600 font-semibold'
 				>
 					X
 				</button>
