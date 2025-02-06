@@ -20,6 +20,12 @@ const CustomerSay = () => {
 					comment='Amazing experience, will come back again!'
 					rating={4}
 				/>
+				<CustomerSayCard
+					avatar='/singleroom.jpg'
+					imageAlt='Another Customer'
+					comment='Amazing experience, will come back again!'
+					rating={5}
+				/>
 			</div>
 		</div>
 	);
