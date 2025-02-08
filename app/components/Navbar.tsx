@@ -2,60 +2,48 @@
 
 import { useRouter } from 'next/navigation';
 import React from 'react';
+import { FaHotel } from 'react-icons/fa';
 import Button from './Button';
 
 const Navbar = () => {
 	const router = useRouter();
-	const handleSignupRedirect = () => {
-		router.push('/login');
-	};
 
-	const handleHome = () => {
-		router.push('/home');
-	};
-
-	const handleRoom = () => {
-		router.push('/rooms');
-	};
-
-	const handleContact = () => {
-		router.push('/contact');
+	const handleNavigation = (path: string) => {
+		router.push(path);
 	};
 
 	return (
-		<div className='w-full border-b-2 shadow-lg sticky top-0 bg-gradient-to-r from-blue-300 via-blue-400 to-blue-600 text-white z-50'>
-			<div className='mx-auto flex justify-between items-center py-4 px-6'>
-				<div className='w-1/4   text-xl font-bold text-black'>
-					Zetta Reservation
+		<nav className='sticky top-4 z-50'>
+			<div className='container mx-auto flex justify-between items-center py-3 px-8 bg-gradient-to-r from-blue-300 via-blue-400 to-blue-600 rounded-full shadow-lg'>
+				<div
+					className='flex items-center text-2xl font-bold text-black cursor-pointer hover:text-white transition duration-300'
+					onClick={() => handleNavigation('/home')}
+				>
+					<FaHotel className='mr-2 text-red-600' /> Zetta
+					Reservation
 				</div>
-				<div className='w-1/4 flex space-x-6  font-semibold'>
-					<p
-						className='hover:text-yellow-300 cursor-pointer transition duration-300 py-2'
-						onClick={handleHome}
-					>
-						Home
-					</p>
-					<p
-						className='hover:text-yellow-300 cursor-pointer transition duration-300 py-2'
-						onClick={handleRoom}
-					>
-						Rooms
-					</p>
-					<p
-						className='hover:text-yellow-300 cursor-pointer transition duration-300 py-2'
-						onClick={handleContact}
-					>
-						Contact Us
-					</p>
+				<div className='flex space-x-6 text-lg font-medium'>
+					{[
+						{ name: 'Home', path: '/home' },
+						{ name: 'Rooms', path: '/rooms' },
+						{ name: 'Contact Us', path: '/contact' }
+					].map(item => (
+						<p
+							key={item.path}
+							className='relative px-4 py-2 cursor-pointer transition duration-300 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-1 before:bg-yellow-300 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0'
+							onClick={() => handleNavigation(item.path)}
+						>
+							{item.name}
+						</p>
+					))}
 					<Button
-						className='ml-6 px-6 py-2 rounded-lg text-white hover:bg-red-600 transition duration-300'
+						className='ml-6 px-6 py-2 rounded-full text-white bg-red-500 hover:bg-red-600 transition duration-300 shadow-md'
 						text='Log Out'
-						bgColor='bg-red-500'
-						onClick={handleSignupRedirect}
+						onClick={() => handleNavigation('/login')}
 					/>
 				</div>
 			</div>
-		</div>
+		</nav>
 	);
 };
 
