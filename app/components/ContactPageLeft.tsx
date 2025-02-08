@@ -14,7 +14,7 @@ interface ContactPageLeftProps {
 const ContactPageLeft = ({ locations }: ContactPageLeftProps) => {
 	return (
 		<div className='p-6 mt-12 flex flex-col'>
-			<h2 className='text-xl font-semibold mb-4 flex justify-center items-center'>
+			<h2 className='mt-12 flex justify-center items-center text-xl font-semibold mb-4 text-center sm:text-left'>
 				Our Locations
 			</h2>
 			<ul className='space-y-4'>
