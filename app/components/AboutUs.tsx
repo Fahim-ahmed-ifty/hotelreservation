@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutUs = () => {
 	return (
-		<div className='mx-auto mt-20 w-full max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center'>
+		<div className='mx-auto mt-6 w-full max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center'>
 			<h1 className='text-2xl sm:text-3xl md:text-4xl font-semibold mb-6 text-center'>
 				About Zetta Reservation
 			</h1>
