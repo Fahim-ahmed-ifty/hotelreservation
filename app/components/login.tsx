@@ -88,7 +88,7 @@ const Login: React.FC = () => {
 
 			<div className='mt-2 flex justify-center items-center'>
 				<Button
-					text='if not logged please sign up'
+					text='if not Registered please Register first'
 					textColor='text-white'
 					onClick={handleSignupRedirect}
 				/>
