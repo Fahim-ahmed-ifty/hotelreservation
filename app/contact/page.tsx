@@ -19,13 +19,13 @@ const page = () => {
 	];
 
 	return (
-		<div className='w-full h-full justify-between'>
+		<div className='w-full h-full flex flex-col justify-between'>
 			<Navbar />
-			<div className='flex flex-row'>
-				<div className='w-1/3 p-12'>
+			<div className='flex flex-col md:flex-row'>
+				<div className='w-full md:w-1/3 p-12'>
 					<ContactPageLeft locations={locations} />
 				</div>
-				<div className='w-2/3'>
+				<div className='w-full md:w-2/3'>
 					<ContactPageRight />
 				</div>
 			</div>
