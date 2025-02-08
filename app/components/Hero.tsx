@@ -36,12 +36,12 @@ const Hero = () => {
 	}, [changeImageRandomly]);
 
 	return (
-		<div className='w-full h-screen flex'>
-			<div className='w-1/2 m-12 p-12 flex flex-col justify-center items-start'>
-				<h1 className='text-4xl font-bold'>
+		<div className='w-full h-screen flex flex-col lg:flex-row'>
+			<div className='w-full lg:w-1/2 m-4 p-6 flex flex-col items-start justify-center'>
+				<h1 className='text-3xl sm:text-4xl font-bold'>
 					Your Perfect Stay Awaits!
 				</h1>
-				<h2 className='p-2'>
+				<h2 className='p-2 text-sm sm:text-base'>
 					Book now and experience comfort, luxury, and convenience at
 					our exclusive hotel. Reserve your room today and make your
 					getaway unforgettable!
@@ -52,36 +52,36 @@ const Hero = () => {
 						textColor='text-white'
 						onClick={handleModalToggle}
 					/>
-					<p className='ml-2 mt-3 text-[12px] hover:underline'>
+					<p className='ml-2 mt-3 text-[12px] sm:text-xs hover:underline'>
 						Get 25% off for first booked
 					</p>
 				</div>
 			</div>
 
-			<div className='w-1/2 m-12 p-12 grid grid-cols-2 grid-rows-2 gap-6 h-full'>
+			<div className='w-full lg:w-1/2 m-4 p-6 grid grid-cols-2 grid-rows-2 gap-4 lg:h-full'>
 				<div className='col-span-2 row-span-1 relative shadow-xl'>
 					<BentoCard
 						imageSrc={imageSrc}
 						imageAlt='1st one'
-						customHeight='h-[500px]'
+						customHeight='h-[250px] sm:h-[350px] lg:h-[500px]'
 						customWidth='w-full'
 					/>
 				</div>
 
-				<div className='col-span-1 row-span-1 relative'>
+				<div className='mt-12 col-span-1 row-span-1 relative'>
 					<BentoCard
 						imageSrc='/hero2.jpg'
 						imageAlt='2nd one'
-						customHeight='h-[200px]'
+						customHeight='h-[150px] sm:h-[200px]'
 						customWidth='w-full'
 					/>
 				</div>
 
-				<div className='col-span-1 row-span-1 relative'>
+				<div className='mt-12 col-span-1 row-span-1 relative'>
 					<BentoCard
 						imageSrc='/hero3.jpg'
 						imageAlt='3rd one'
-						customHeight='h-[150px]'
+						customHeight='h-[120px] sm:h-[200px]'
 						customWidth='w-full'
 					/>
 				</div>
