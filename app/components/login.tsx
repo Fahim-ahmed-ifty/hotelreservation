@@ -35,8 +35,15 @@ const Login: React.FC = () => {
 				setMessage(response.error);
 			} else {
 				setMessage(response?.success || 'Login successful!');
+
+
+				if (response?.role === 'admin') {
+					router.push('/admin-dashboard');
+				} else {
+					router.push('/home');
+				}
+
 				setForm({ email: '', password: '' });
-				router.push('/home');
 			}
 		} catch {
 			setMessage('Something went wrong. Please try again.');
@@ -88,7 +95,7 @@ const Login: React.FC = () => {
 
 			<div className='mt-2 flex justify-center items-center'>
 				<Button
-					text='if not Registered please Register first'
+					text='If not Registered, please Register first'
 					textColor='text-white'
 					onClick={handleSignupRedirect}
 				/>

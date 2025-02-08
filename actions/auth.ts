@@ -7,6 +7,7 @@ import { revalidatePath } from 'next/cache';
 export interface ServerResponse {
 	success?: string;
 	error?: string;
+	role?: 'admin' | 'user';
 }
 
 interface CustomError extends Error {
@@ -16,7 +17,8 @@ interface CustomError extends Error {
 export async function signup(
 	name: string,
 	email: string,
-	password: string
+	password: string,
+	role: 'admin' | 'user' = 'user'
 ): Promise<ServerResponse> {
 	try {
 		const db = await connectToDatabase();
@@ -32,7 +34,8 @@ export async function signup(
 		await usersCollection.insertOne({
 			name,
 			email,
-			password: hashedPassword
+			password: hashedPassword,
+			role
 		});
 
 		revalidatePath('/signup');
@@ -62,7 +65,12 @@ export async function login(
 			return { error: 'Invalid credentials' };
 		}
 
-		return { success: 'Login successful!' };
+		const role = user.role;
+
+		return {
+			success: 'Login successful!',
+			role
+		};
 	} catch (error) {
 		const err = error as CustomError;
 		return { error: err.message || 'Something went wrong' };
