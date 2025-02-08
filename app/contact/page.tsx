@@ -19,7 +19,7 @@ const page = () => {
 	];
 
 	return (
-		<div>
+		<div className='w-full h-full justify-between'>
 			<Navbar />
 			<div className='flex flex-row'>
 				<div className='w-1/3 p-12'>
@@ -29,7 +29,6 @@ const page = () => {
 					<ContactPageRight />
 				</div>
 			</div>
-
 			<Footer />
 		</div>
 	);
