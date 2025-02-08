@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React, { useEffect, useState } from 'react';
 import AskedqsnCard from './AskedqsnCard';
@@ -30,10 +30,9 @@ const AskedQuestion = () => {
 			setCurrentIndex(
 				prevIndex => (prevIndex + 1) % questions.length
 			);
-		}, 10000); // Change card every 10 seconds
-
-		return () => clearInterval(interval); // Cleanup interval on unmount
-	}, []);
+		}, 10000);
+		return () => clearInterval(interval);
+	}, [questions.length]);
 
 	return (
 		<div className='w-full flex flex-col justify-center items-center'>
