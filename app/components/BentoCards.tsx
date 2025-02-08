@@ -21,7 +21,7 @@ const BentoCards = ({
 				className='object-cover'
 				src={imageSrc}
 				alt={imageAlt}
-				layout="fill"
+				layout='fill'
 			/>
 		</div>
 	);

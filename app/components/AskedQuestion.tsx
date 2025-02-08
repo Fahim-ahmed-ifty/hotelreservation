@@ -35,11 +35,11 @@ const AskedQuestion = () => {
 	}, [questions.length]);
 
 	return (
-		<div className='w-full flex flex-col justify-center items-center'>
-			<p className='text-2xl font-bold flex justify-center items-center'>
+		<div className='w-full flex flex-col justify-center items-center px-4 sm:px-8 py-8'>
+			<p className='text-2xl font-bold flex justify-center items-center sm:text-3xl'>
 				Most Asked Questions
 			</p>
-			<div className='mt-2'>
+			<div className='mt-4'>
 				<AskedqsnCard
 					avatar={questions[currentIndex].avatar}
 					imageAlt={questions[currentIndex].imageAlt}

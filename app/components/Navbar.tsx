@@ -13,8 +13,8 @@ const Navbar = () => {
 	};
 
 	return (
-		<nav className='sticky top-4 z-50'>
-			<div className='container mx-auto flex justify-between items-center py-3 px-8 bg-gradient-to-r from-blue-300 via-blue-400 to-blue-600 rounded-full shadow-lg'>
+		<nav className='sticky top-4 z-50 mx-2'>
+			<div className='w-full flex justify-between items-center py-3 px-8 bg-gradient-to-r from-blue-300 via-blue-400 to-blue-600 rounded-full shadow-lg'>
 				<div
 					className='flex items-center text-2xl font-bold text-black cursor-pointer hover:text-white transition duration-300'
 					onClick={() => handleNavigation('/home')}
