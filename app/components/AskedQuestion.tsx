@@ -39,7 +39,7 @@ const AskedQuestion = () => {
 			<p className='text-2xl font-bold flex justify-center items-center'>
 				Most Asked Questions
 			</p>
-			<div className='mt-6'>
+			<div className='mt-2'>
 				<AskedqsnCard
 					avatar={questions[currentIndex].avatar}
 					imageAlt={questions[currentIndex].imageAlt}
