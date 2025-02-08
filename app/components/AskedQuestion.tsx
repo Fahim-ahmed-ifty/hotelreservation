@@ -9,7 +9,7 @@ const AskedQuestion = () => {
 				Most Asked Questions{' '}
 			</p>
 			<div className='mt-6'>
-				<AskedqsnCard />
+				<AskedqsnCard avatar='/deluxroom.jpg' name='ABC Company'/>
 			</div>
 		</div>
 	);
