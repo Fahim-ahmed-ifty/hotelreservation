@@ -8,49 +8,53 @@ const RoomSettingsPage = () => {
 	const [roomSettings, setRoomSettings] = useState([
 		{
 			roomType: 'Deluxe Rooms',
-			available: 'No available rooms',
+			available: 0,
 			date: ''
 		},
 		{
 			roomType: 'Premium Single Rooms',
-			available: 'No available rooms',
+			available: 0,
 			date: ''
 		},
 		{
 			roomType: 'Premium Double Rooms',
-			available: 'No available rooms',
+			available: 0,
 			date: ''
 		},
 		{
 			roomType: 'Honeymoon Suites',
-			available: 'No available rooms',
+			available: 0,
 			date: ''
 		},
 		{
 			roomType: 'Premium Honeymoon Suites',
-			available: 'No available rooms',
+			available: 0,
 			date: ''
 		},
 		{
 			roomType: 'Single Rooms',
-			available: 'No available rooms',
+			available: 0,
 			date: ''
 		},
 		{
 			roomType: 'Double Rooms',
-			available: 'No available rooms',
+			available: 0,
 			date: ''
 		},
 		{
 			roomType: 'Small Single Rooms',
-			available: 'No available rooms',
+			available: 0,
 			date: ''
 		}
 	]);
 
 	const handleAvailabilityChange = (index: number, value: string) => {
 		const updatedSettings = [...roomSettings];
-		updatedSettings[index].available = value;
+		const newValue = Number(value);
+
+		// If the user types "0", set it to 0 (representing no available rooms)
+		updatedSettings[index].available = newValue;
+
 		setRoomSettings(updatedSettings);
 	};
 
@@ -81,7 +85,10 @@ const RoomSettingsPage = () => {
 							<div className='flex flex-col'>
 								<div className='font-semibold'>{room.roomType}</div>
 								<div className='text-sm text-gray-500'>
-									Current Availability: {room.available}
+									Current Availability:{' '}
+									{room.available === 0
+										? 'No available rooms'
+										: `${room.available} rooms available`}
 								</div>
 							</div>
 							<div className='flex flex-col'>
@@ -99,32 +106,15 @@ const RoomSettingsPage = () => {
 								<label className='text-sm text-gray-600 mt-2'>
 									Update Availability
 								</label>
-								<select
+								<input
+									type='number'
 									value={room.available}
 									onChange={e =>
 										handleAvailabilityChange(index, e.target.value)
 									}
 									className='p-2 border rounded-md mt-1'
-								>
-									<option value='No available rooms'>
-										No available rooms
-									</option>
-									<option value='1 available room'>
-										1 available room
-									</option>
-									<option value='2 available rooms'>
-										2 available rooms
-									</option>
-									<option value='3 available rooms'>
-										3 available rooms
-									</option>
-									<option value='14 available rooms'>
-										14 available rooms
-									</option>
-									<option value='Multiple rooms available'>
-										Multiple rooms available
-									</option>
-								</select>
+									min={0}
+								/>
 							</div>
 						</div>
 					))}
