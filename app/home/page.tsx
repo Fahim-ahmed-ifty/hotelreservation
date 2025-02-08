@@ -1,5 +1,6 @@
 import React from 'react';
 import AboutUs from '../components/AboutUs';
+import AskedQuestion from '../components/AskedQuestion';
 import CustomerSay from '../components/CustomerSay';
 import FeaturedServices from '../components/FeaturedServices';
 import Footer from '../components/Footer';
@@ -15,6 +16,7 @@ const page = () => {
 			<Hero />
 			<AboutUs />
 			<FeaturedServices />
+			<AskedQuestion />
 			<RoomDetails />
 			<CustomerSay />
 			<div className='m-12 p-12'>
