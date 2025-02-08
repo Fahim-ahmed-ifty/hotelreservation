@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Button from './Button';
 
-const ContactPage: React.FC = () => {
+const ContactPageRight: React.FC = () => {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
@@ -103,4 +103,4 @@ const ContactPage: React.FC = () => {
 	);
 };
 
-export default ContactPage;
+export default ContactPageRight;

@@ -1,5 +1,6 @@
 import React from 'react';
-import ContactPage from '../components/ContactPage';
+import ContactPageLeft from '../components/ContactPageLeft';
+import ContactPageRight from '../components/ContactPageRight';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 
@@ -7,7 +8,15 @@ const page = () => {
 	return (
 		<div>
 			<Navbar />
-			<ContactPage />
+			<div className='flex flex-row'>
+				<div className='w-1/3'>
+					<ContactPageLeft />
+				</div>
+				<div className='w-2/3'>
+					<ContactPageRight />
+				</div>
+			</div>
+
 			<Footer />
 		</div>
 	);
