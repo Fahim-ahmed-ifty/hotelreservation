@@ -36,9 +36,8 @@ const Login: React.FC = () => {
 			} else {
 				setMessage(response?.success || 'Login successful!');
 
-
 				if (response?.role === 'admin') {
-					router.push('/admin-dashboard');
+					router.push('/admin/admin-dashboard');
 				} else {
 					router.push('/home');
 				}
