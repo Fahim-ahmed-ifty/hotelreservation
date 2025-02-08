@@ -58,7 +58,7 @@ const Hero = () => {
 				</div>
 			</div>
 
-			<div className='w-full lg:w-1/2 m-4 p-6 grid grid-cols-2 grid-rows-2 gap-4 lg:h-full'>
+			<div className='mt-12 w-full lg:w-1/2 m-4 p-6 grid grid-cols-2 grid-rows-2 gap-4 lg:h-full'>
 				<div className='col-span-2 row-span-1 relative shadow-xl'>
 					<BentoCard
 						imageSrc={imageSrc}
