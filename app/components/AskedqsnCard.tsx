@@ -17,8 +17,8 @@ const AskedqsnCard = ({
 	answer
 }: AskedqsnCardProps) => {
 	return (
-		<div className='bg-blue-600 bg-opacity-20 p-4 rounded-2xl shadow-md items-center text-center w-[1300px] h-[400px]  hover:scale-110'>
-			<div className='flex flex-row'>
+		<div className='bg-blue-600 bg-opacity-20 p-4 rounded-2xl shadow-md items-center text-center w-[1000px] h-[400px]  hover:scale-110'>
+			<div className='flex flex-col justify-center items-center'>
 				<div>
 					<Image
 						src={avatar}
@@ -28,8 +28,12 @@ const AskedqsnCard = ({
 						height={100}
 					/>
 				</div>
-				<div className='ml-2 mt-10'>
+				<div className=''>
 					<p className='font-semibold'>{name}</p>
+				</div>
+				<div className='font-bold mb-6'>{qsn}</div>
+				<div className='w-11/12 sm:w-3/4 md:w-1/2 text-center p-4 justify-between'>
+					{answer}
 				</div>
 			</div>
 		</div>
